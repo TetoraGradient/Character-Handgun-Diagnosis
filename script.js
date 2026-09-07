@@ -752,7 +752,8 @@ copyButton.addEventListener("click", async () => {
     `もし${characterName}が拳銃を選ぶなら\n` +
     `→ ${resultTitle.textContent}\n` +
     `${resultCopy.textContent}\n` +
-    `MATCH ${matchScore.textContent}`;
+    `MATCH ${matchScore.textContent}\n\n` +
+    `https://tetoragradient.github.io/Character-Handgun-Diagnosis/`;
 
   try {
     await navigator.clipboard.writeText(text);
