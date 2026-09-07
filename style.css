@@ -908,7 +908,7 @@ p {
   place-items: center;
   overflow: hidden;
   border: 1px solid var(--line);
-  background: #f4f4f0;
+  background: #0b0d0f;
 }
 
 .result-gun-image {
@@ -1199,7 +1199,7 @@ p {
   place-items: center;
   overflow: hidden;
   border: 1px solid var(--line);
-  background: #f4f4f0;
+  background: #0b0d0f;
 }
 
 .gun-result-card-image {
@@ -1303,4 +1303,10 @@ img {
 html {
   -webkit-text-size-adjust: 100%;
   text-size-adjust: 100%;
+}
+
+/* Non-white photo presentation */
+.result-image-frame,
+.gun-result-card-image-frame {
+  background: #0b0d0f;
 }
