@@ -891,3 +891,177 @@ p {
 .result-for {
   text-align: left;
 }
+
+
+/* Result firearm image */
+.result-image-figure {
+  width: min(100%, 720px);
+  margin: 24px 0 28px;
+}
+
+.result-image-figure[hidden] {
+  display: none;
+}
+
+.result-image-frame {
+  width: 100%;
+  min-height: 260px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #f4f4f0;
+}
+
+.result-gun-image {
+  display: block;
+  width: 100%;
+  max-height: 430px;
+  object-fit: contain;
+}
+
+.result-image-credit {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: 8px;
+  color: var(--muted);
+  font-family: "DotGothic16", sans-serif;
+  font-size: 0.68rem;
+  line-height: 1.65;
+  letter-spacing: 0.04em;
+}
+
+.result-image-credit a {
+  color: var(--muted);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.result-image-credit a:hover {
+  color: var(--accent);
+}
+
+.result-image-note {
+  color: var(--text);
+}
+
+.result-image-figure.image-load-error .result-image-frame {
+  min-height: 120px;
+  background: var(--panel);
+}
+
+@media (max-width: 600px) {
+  .result-image-figure {
+    margin: 20px 0 24px;
+  }
+
+  .result-image-frame {
+    min-height: 190px;
+  }
+
+  .result-gun-image {
+    max-height: 320px;
+  }
+
+  .result-image-credit {
+    font-size: 0.64rem;
+  }
+}
+
+
+/* Result image sizing/alignment */
+.result-image-figure {
+  width: min(100%, 560px);
+  margin: 22px auto 26px;
+}
+
+.result-image-frame {
+  min-height: 220px;
+}
+
+.result-gun-image {
+  max-height: 340px;
+  object-fit: contain;
+}
+
+.result-image-credit {
+  text-align: left;
+}
+
+@media (max-width: 600px) {
+  .result-image-figure {
+    width: min(100%, 460px);
+    margin: 18px auto 22px;
+  }
+
+  .result-image-frame {
+    min-height: 170px;
+  }
+
+  .result-gun-image {
+    max-height: 270px;
+  }
+}
+
+
+/* Result header only: centered. Meters and lower content stay left-aligned. */
+.result-hero {
+  width: 100%;
+  text-align: center;
+}
+
+.result-hero .eyebrow,
+.result-hero .result-for,
+.result-hero #result-title,
+.result-hero .result-title-ja {
+  text-align: center;
+}
+
+.result-hero .result-image-figure {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.result-hero .result-image-credit {
+  text-align: center;
+  align-items: center;
+}
+
+.result-hero .tag-list {
+  justify-content: center !important;
+}
+
+/* Restore left alignment below the centered result header. */
+#result-screen > .trait-meter-card,
+#result-screen > .score-card,
+#result-screen > .result-copy,
+#result-screen > .result-detail,
+#result-screen > .result-actions,
+#result-screen > .copy-status {
+  text-align: left;
+}
+
+#result-screen > .result-actions {
+  justify-content: flex-start !important;
+}
+
+
+/* Result labels: slightly larger */
+.result-hero .tag {
+  padding: 8px 13px;
+  font-size: 0.9rem;
+  line-height: 1.25;
+  letter-spacing: 0.07em;
+}
+
+.result-hero .tag-list {
+  gap: 10px;
+}
+
+@media (max-width: 600px) {
+  .result-hero .tag {
+    padding: 7px 11px;
+    font-size: 0.84rem;
+  }
+}

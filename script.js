@@ -116,7 +116,7 @@ const questions = [
     subtitle: "職業名より、その人物がどう動くかで選んでください。",
     answers: [
       {
-        text: "公的な組織に属するプロ",
+        text: "規律ある組織に属するプロ",
         scores: { professional: 3, practical: 2, modern: 1 }
       },
       {
@@ -124,7 +124,7 @@ const questions = [
         scores: { professional: 2, style: 1, unique: 1 }
       },
       {
-        text: "一般人寄り。必要な時だけ使う",
+        text: "普段は武器を持たない。必要な時だけ使う",
         scores: { compact: 3, practical: 2 }
       },
       {
@@ -156,20 +156,24 @@ const questions = [
     ],
   },
   {
-    title: "存在感はどれくらい？",
-    subtitle: "拳銃ではなく、キャラクター本人の存在感として。",
+    title: "素材感は？",
+    subtitle: "そのキャラの持ち物として、しっくりくる質感は？",
     answers: [
       {
-        text: "かなり目立つ。視線を集める",
-        scores: { style: 3, unique: 2, compact: 0 }
+        text: "金属の重厚感や機械らしさ",
+        scores: { classic: 2, mechanical: 3, elegant: 1 }
       },
       {
-        text: "普段は落ち着いているが印象に残る",
-        scores: { elegant: 2, professional: 2, style: 1 }
+        text: "樹脂や新素材の機能的な感じ",
+        scores: { modern: 3, practical: 2, professional: 1 }
       },
       {
-        text: "目立たず自然に馴染む",
-        scores: { compact: 3, practical: 2 }
+        text: "変わった形や異質な組み合わせ",
+        scores: { unique: 3, experimental: 3, style: 2 }
+      },
+      {
+        text: "素材より、全体の似合い方が大事",
+        scores: { style: 1, practical: 1, elegant: 1 }
       },
     ],
   },
@@ -261,22 +265,33 @@ const questions = [
 
 const guns = [
   {
-    name: "Beretta 92FS",
-    jaName: "ベレッタ 92FS",
+    name: "Colt Python",
+    jaName: "コルト・パイソン",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/06/ColtPython.jpg",
+    imageSource: "https://commons.wikimedia.org/wiki/File:ColtPython.jpg",
+    imageCredit: "Sf46",
+    imageLicense: "Public Domain",
+    imageNote: "",
     traits: {
-      style: 4, practical: 3.5, classic: 4, modern: 2.5, elegant: 5,
-      rugged: 1.5, unique: 2, professional: 4, mechanical: 4, compact: 1.5,
+      style: 5, practical: 2.2, classic: 5, modern: 1, elegant: 5,
+      rugged: 3, unique: 3.5, professional: 1.5, mechanical: 4, compact: 1,
       experimental: 1
     },
-    tags: ["端正", "クラシック", "メカニカル"],
-    copy: "実用品にも美しさを求める人物に似合う一丁。",
-    detail: "端正なシルエットと機械らしい存在感を併せ持つタイプです。合理性だけで選ぶのではなく、道具の見た目や所作にもこだわるキャラクターと相性がよいでしょう。",
+    tags: ["クラシック", "高級感", "存在感"],
+    copy: "古典的な美しさと強い存在感を持つ人物に似合う一丁。",
+    detail: "端正で華やかな外観を持つリボルバーです。実用品としての無難さより、完成された造形や威厳を重視するキャラクターに向きます。落ち着きがありながら、持ち物には明確なこだわりがある人物と相性がよいでしょう。",
   },
   {
     name: "Beretta 92FS Inox",
     jaName: "ベレッタ 92FS イノックス",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/0f/Beretta_92_FSi.JPG",
+    imageSource: "https://commons.wikimedia.org/wiki/File:Beretta_92_FSi.JPG",
+    imageCredit: "Prnrm",
+    imageLicense: "CC BY-SA 3.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    imageNote: "",
     traits: {
-      style: 5, practical: 3, classic: 4, modern: 2.5, elegant: 5,
+      style: 5, practical: 3, classic: 3.5, modern: 3, elegant: 5,
       rugged: 1, unique: 3, professional: 3, mechanical: 4, compact: 1.5,
       experimental: 1
     },
@@ -287,6 +302,12 @@ const guns = [
   {
     name: "Glock 17",
     jaName: "グロック 17",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/45/Glock_17.jpg",
+    imageSource: "https://commons.wikimedia.org/wiki/File:Glock_17.jpg",
+    imageCredit: "Jmajonis",
+    imageLicense: "CC BY-SA 3.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    imageNote: "",
     traits: {
       style: 1, practical: 5, classic: 1, modern: 5, elegant: 1,
       rugged: 3, unique: 1, professional: 5, mechanical: 1, compact: 2.5,
@@ -299,6 +320,12 @@ const guns = [
   {
     name: "H&K USP",
     jaName: "H&K USP",
+    image: "https://upload.wikimedia.org/wikipedia/commons/d/dd/First-year_H%26K_USP_9mm_%2832415150000%29_modified.png",
+    imageSource: "https://commons.wikimedia.org/wiki/File:First-year_H%26K_USP_9mm_(32415150000)_modified.png",
+    imageCredit: "lifesizepotato / JayCoop",
+    imageLicense: "CC0 1.0",
+    imageLicenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    imageNote: "",
     traits: {
       style: 2, practical: 5, classic: 2, modern: 4, elegant: 1,
       rugged: 5, unique: 2, professional: 5, mechanical: 3, compact: 1.5,
@@ -311,6 +338,12 @@ const guns = [
   {
     name: "SIG Sauer P226",
     jaName: "SIG ザウエル P226",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/36/Sig_Sauer_P226.jpg",
+    imageSource: "https://commons.wikimedia.org/wiki/File:Sig_Sauer_P226.jpg",
+    imageCredit: "Bruce Varner (Btvarner)",
+    imageLicense: "CC BY-SA 3.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    imageNote: "",
     traits: {
       style: 3, practical: 5, classic: 3, modern: 3.5, elegant: 4,
       rugged: 3, unique: 2, professional: 5, mechanical: 3, compact: 1.5,
@@ -323,9 +356,14 @@ const guns = [
   {
     name: "Walther P99",
     jaName: "ワルサー P99",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/44/Walther_P99.jpg",
+    imageSource: "https://commons.wikimedia.org/wiki/File:Walther_P99.jpg",
+    imageCredit: "U.S. Bureau of Alcohol, Tobacco, Firearms and Explosives",
+    imageLicense: "Public Domain",
+    imageNote: "",
     traits: {
       style: 4, practical: 4, classic: 1, modern: 5, elegant: 4,
-      rugged: 2, unique: 4, professional: 4, mechanical: 3, compact: 2.5,
+      rugged: 2, unique: 3, professional: 4, mechanical: 2.5, compact: 2.5,
       experimental: 2
     },
     tags: ["スマート", "現代的", "ひと癖"],
@@ -335,9 +373,15 @@ const guns = [
   {
     name: "CZ 75",
     jaName: "CZ 75",
+    image: "https://upload.wikimedia.org/wikipedia/commons/8/81/Cz75.jpg",
+    imageSource: "https://commons.wikimedia.org/wiki/File:Cz75.jpg",
+    imageCredit: "Jason9811",
+    imageLicense: "CC BY-SA 2.5",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.5/",
+    imageNote: "",
     traits: {
       style: 4, practical: 4, classic: 4, modern: 2, elegant: 4,
-      rugged: 2, unique: 3.5, professional: 3, mechanical: 5, compact: 2,
+      rugged: 2, unique: 2.5, professional: 3, mechanical: 4.5, compact: 2,
       experimental: 1.5
     },
     tags: ["通好み", "機械美", "控えめ"],
@@ -347,9 +391,15 @@ const guns = [
   {
     name: "M1911",
     jaName: "M1911",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/4f/M1911_pistol.jpg",
+    imageSource: "https://commons.wikimedia.org/wiki/File:M1911_pistol.jpg",
+    imageCredit: "Ecrelin",
+    imageLicense: "CC0 1.0",
+    imageLicenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
+    imageNote: "",
     traits: {
-      style: 5, practical: 2.5, classic: 5, modern: 1, elegant: 4,
-      rugged: 4, unique: 3, professional: 2.5, mechanical: 5, compact: 1.5,
+      style: 5, practical: 3.2, classic: 5, modern: 1, elegant: 4,
+      rugged: 4, unique: 3, professional: 3, mechanical: 5, compact: 1.5,
       experimental: 1
     },
     tags: ["古典", "様式美", "強いこだわり"],
@@ -359,6 +409,11 @@ const guns = [
   {
     name: "Browning Hi-Power",
     jaName: "ブローニング・ハイパワー",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/e3/FN_Hi_Power.jpg",
+    imageSource: "https://commons.wikimedia.org/wiki/File:FN_Hi_Power.jpg",
+    imageCredit: "U.S. Bureau of Alcohol, Tobacco, Firearms and Explosives",
+    imageLicense: "Public Domain",
+    imageNote: "",
     traits: {
       style: 4, practical: 3.5, classic: 5, modern: 1.5, elegant: 5,
       rugged: 2, unique: 3, professional: 3, mechanical: 4, compact: 2,
@@ -369,8 +424,33 @@ const guns = [
     detail: "古典的な輪郭と端正さがあり、落ち着いた印象です。伝統を好みながらも、大げさな演出を必要としないキャラクターに合わせやすいでしょう。",
   },
   {
+    name: "Walther PPK",
+    jaName: "ワルサー PPK",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/28/Das_walther_ppk.jpg",
+    imageSource: "https://commons.wikimedia.org/wiki/File:Das_walther_ppk.jpg",
+    imageCredit: "Jaikuma",
+    imageLicense: "CC BY-SA 3.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
+    imageNote: "",
+    traits: {
+      style: 4.5, practical: 3, classic: 5, modern: 1, elegant: 5,
+      rugged: 1, unique: 2.5, professional: 2.5, mechanical: 3, compact: 5,
+      experimental: 1
+    },
+    tags: ["小型", "クラシック", "洗練"],
+    copy: "目立ちすぎず、古典的な洗練を持つ人物に似合います。",
+    detail: "小型で端正なシルエットを持つクラシックな一丁です。派手さよりも品のある存在感や携帯しやすいサイズ感を好むキャラクターに向きます。落ち着いた服装や、控えめながら持ち物にはこだわる人物とも相性がよいでしょう。",
+  },
+  {
     name: "Desert Eagle",
     jaName: "デザートイーグル",
+    image: "https://images.unsplash.com/photo-1681680020165-6b6f7af3c6ce?auto=format&fit=crop&fm=jpg&ixlib=rb-4.1.0&q=60&w=3000",
+    imageSource: "https://unsplash.com/photos/a-close-up-of-a-gun-on-a-black-surface-MsdDbOUTiu4",
+    imageSourceName: "Unsplash",
+    imageCredit: "Thomas Tucker",
+    imageLicense: "Unsplash License",
+    imageLicenseUrl: "https://unsplash.com/license",
+    imageNote: "",
     traits: {
       style: 5, practical: 1, classic: 2, modern: 2.5, elegant: 1,
       rugged: 5, unique: 5, professional: 1, mechanical: 5, compact: 0,
@@ -383,6 +463,11 @@ const guns = [
   {
     name: "FN Five-seveN",
     jaName: "FN ファイブセブン",
+    image: "https://upload.wikimedia.org/wikipedia/commons/5/5a/FN_Five_Seven.jpg",
+    imageSource: "https://commons.wikimedia.org/wiki/File:FN_Five_Seven.jpg",
+    imageCredit: "U.S. Bureau of Alcohol, Tobacco, Firearms and Explosives",
+    imageLicense: "Public Domain",
+    imageNote: "",
     traits: {
       style: 3, practical: 4, classic: 1, modern: 5, elegant: 2,
       rugged: 2, unique: 4.5, professional: 4, mechanical: 2.5, compact: 2,
@@ -395,9 +480,14 @@ const guns = [
   {
     name: "Ruger P85",
     jaName: "ルガー P85",
+    image: "https://upload.wikimedia.org/wikipedia/commons/e/e3/Ruger_P89.jpg",
+    imageSource: "https://commons.wikimedia.org/wiki/File:Ruger_P89.jpg",
+    imageCredit: "U.S. Bureau of Alcohol, Tobacco, Firearms and Explosives",
+    imageLicense: "Public Domain",
+    imageNote: "※ P85の同系列であるRuger P89の参考画像",
     traits: {
       style: 1, practical: 5, classic: 3, modern: 2, elegant: 1,
-      rugged: 5, unique: 3.5, professional: 3, mechanical: 3, compact: 1.5,
+      rugged: 5, unique: 1.5, professional: 3.5, mechanical: 3, compact: 1.5,
       experimental: 1
     },
     tags: ["地味", "頑丈", "実用品"],
@@ -407,6 +497,12 @@ const guns = [
   {
     name: "Kel-Tec P50",
     jaName: "ケルテック P50",
+    image: "https://upload.wikimedia.org/wikipedia/commons/3/33/Lel-Kek_P50.jpg",
+    imageSource: "https://commons.wikimedia.org/wiki/File:Lel-Kek_P50.jpg",
+    imageCredit: "east718",
+    imageLicense: "CC BY-SA 4.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/4.0/",
+    imageNote: "※ ブレース、光学照準器、ライト装着個体。Commons上の現行版はHohumによる色調調整あり",
     rare: "modern_oddity",
     traits: {
       style: 4, practical: 2.5, classic: 0, modern: 5, elegant: 1,
@@ -420,6 +516,12 @@ const guns = [
   {
     name: "Apache Revolver",
     jaName: "アパッチ・リボルバー",
+    image: "https://upload.wikimedia.org/wikipedia/commons/2/28/Apache_revolver.jpg",
+    imageSource: "https://commons.wikimedia.org/wiki/File:Apache_revolver.jpg",
+    imageCredit: "Latente",
+    imageLicense: "CC BY-SA 2.0",
+    imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.0/",
+    imageNote: "",
     rare: "antique_oddity",
     traits: {
       style: 4, practical: 0.5, classic: 5, modern: 0, elegant: 1,
@@ -453,6 +555,9 @@ const backButton = document.querySelector("#back-button");
 const resultFor = document.querySelector("#result-for");
 const resultTitle = document.querySelector("#result-title");
 const resultTitleJa = document.querySelector("#result-title-ja");
+const resultGunImage = document.querySelector("#result-gun-image");
+const resultImageFigure = document.querySelector("#result-image-figure");
+const resultImageCredit = document.querySelector("#result-image-credit");
 const resultTags = document.querySelector("#result-tags");
 const traitMeters = document.querySelector("#trait-meters");
 const matchScore = document.querySelector("#match-score");
@@ -608,23 +713,27 @@ const TRAIT_WEIGHTS = {
   unique: 1.1,
   professional: 0.9,
   mechanical: 1,
-  compact: 0.7,
-  experimental: 1.25,
+  compact: 0.85,
+  experimental: 1.15,
 };
 
 function similarity(profile, gunTraits) {
-  let weightedDistance = 0;
-  let maxDistance = 0;
+  let dot = 0;
+  let profileNorm = 0;
+  let gunNorm = 0;
 
   TRAITS.forEach((trait) => {
     const weight = TRAIT_WEIGHTS[trait] || 1;
-    const diff = (profile[trait] || 0) - (gunTraits[trait] || 0);
-    weightedDistance += weight * diff * diff;
-    maxDistance += weight * 25;
+    const profileValue = profile[trait] || 0;
+    const gunValue = gunTraits[trait] || 0;
+
+    dot += weight * profileValue * gunValue;
+    profileNorm += weight * profileValue * profileValue;
+    gunNorm += weight * gunValue * gunValue;
   });
 
-  const normalizedDistance = Math.sqrt(weightedDistance / maxDistance);
-  return Math.max(0, 1 - normalizedDistance);
+  if (profileNorm === 0 || gunNorm === 0) return 0;
+  return dot / (Math.sqrt(profileNorm) * Math.sqrt(gunNorm));
 }
 
 function rareResultEligible(gun, profile) {
@@ -632,18 +741,18 @@ function rareResultEligible(gun, profile) {
 
   if (gun.rare === "modern_oddity") {
     return (
-      profile.experimental >= 3.4 &&
-      profile.modern >= 3.1 &&
+      profile.experimental >= 3.3 &&
+      profile.modern >= 3.0 &&
       profile.unique >= 3.0
     );
   }
 
   if (gun.rare === "antique_oddity") {
     return (
-      profile.experimental >= 3.4 &&
-      profile.classic >= 3.1 &&
+      profile.experimental >= 3.3 &&
+      profile.classic >= 3.0 &&
       profile.unique >= 3.0 &&
-      profile.mechanical >= 2.6
+      profile.mechanical >= 2.5
     );
   }
 
@@ -720,6 +829,24 @@ function showResult() {
   resultFor.textContent = `${characterName} に似合う拳銃は`;
   resultTitle.textContent = best.name;
   resultTitleJa.textContent = best.jaName || "";
+
+  if (best.image) {
+    resultImageFigure.hidden = false;
+    resultGunImage.src = best.image;
+    resultGunImage.alt = `${best.jaName || best.name}の参考画像`;
+
+    const note = best.imageNote ? `<span class="result-image-note">${best.imageNote}</span>` : "";
+    resultImageCredit.innerHTML =
+      `${note}<span>画像: ${best.imageCredit} / ` +
+      `<a href="${best.imageSource}" target="_blank" rel="noopener noreferrer">${best.imageSourceName || "Wikimedia Commons"}</a>` +
+      ` / ${best.imageLicenseUrl
+        ? `<a href="${best.imageLicenseUrl}" target="_blank" rel="noopener noreferrer">${best.imageLicense}</a>`
+        : best.imageLicense}</span>`;
+  } else {
+    resultImageFigure.hidden = true;
+    resultGunImage.removeAttribute("src");
+    resultImageCredit.textContent = "";
+  }
   matchScore.textContent = `${displayScore}%`;
   matchBar.style.width = `${displayScore}%`;
   resultCopy.textContent = best.copy;
@@ -761,4 +888,14 @@ copyButton.addEventListener("click", async () => {
   } catch {
     copyStatus.textContent = "コピーできませんでした。ブラウザの権限をご確認ください。";
   }
+});
+
+
+resultGunImage.addEventListener("error", () => {
+  resultImageFigure.classList.add("image-load-error");
+  resultGunImage.alt = "画像を読み込めませんでした";
+});
+
+resultGunImage.addEventListener("load", () => {
+  resultImageFigure.classList.remove("image-load-error");
 });
