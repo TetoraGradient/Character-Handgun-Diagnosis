@@ -19,15 +19,19 @@ const questions = [
     answers: [
       {
         text: "見た瞬間にかっこいいと思えるもの",
-        scores: { style: 3, elegant: 2, unique: 1 }
+        scores: { style: 3, elegant: 1, unique: 1 }
       },
       {
         text: "見た目と実用性の両方",
-        scores: { style: 2, practical: 2, professional: 1 }
+        scores: { style: 2, practical: 2 }
       },
       {
-        text: "飾り気より、信頼できる道具",
-        scores: { practical: 3, rugged: 2, professional: 2 }
+        text: "飾り気より、実用性と信頼性",
+        scores: { practical: 3, professional: 2, rugged: 1, unique: -1, experimental: -1 }
+      },
+      {
+        text: "普通ではないものに惹かれる",
+        scores: { unique: 3, experimental: 2, style: 1 }
       },
     ],
   },
@@ -59,7 +63,7 @@ const questions = [
     answers: [
       {
         text: "新しい設計、現代的なもの",
-        scores: { modern: 3, practical: 1, experimental: 1 }
+        scores: { modern: 3, experimental: 1, classic: -1 }
       },
       {
         text: "新旧より、完成度が高いもの",
@@ -67,7 +71,7 @@ const questions = [
       },
       {
         text: "歴史や古さを感じるもの",
-        scores: { classic: 3, mechanical: 1, elegant: 1 }
+        scores: { classic: 3, mechanical: 1, elegant: 1, modern: -1 }
       },
     ],
   },
@@ -76,16 +80,16 @@ const questions = [
     subtitle: "珍しい構造や、普通ではない設計への反応です。",
     answers: [
       {
-        text: "面白い。仕組みまで知りたくなる",
+        text: "面白い。仕組みそのものに惹かれる",
         scores: { mechanical: 3, unique: 2, experimental: 3 }
       },
       {
-        text: "理由があるなら好き",
-        scores: { practical: 2, mechanical: 2, experimental: 1 }
+        text: "実用上の理由があるなら好き",
+        scores: { practical: 2, mechanical: 1, modern: 1 }
       },
       {
         text: "実績のある普通の構造でいい",
-        scores: { practical: 3, professional: 2, experimental: 0 }
+        scores: { practical: 3, professional: 2, classic: 1 }
       },
     ],
   },
@@ -95,19 +99,19 @@ const questions = [
     answers: [
       {
         text: "定番には定番の理由がある",
-        scores: { practical: 2, professional: 2, unique: 0 }
+        scores: { practical: 2, professional: 2, unique: -1, experimental: -1 }
       },
       {
         text: "似合えばどちらでもいい",
-        scores: { style: 1, practical: 1, elegant: 1, unique: 1 }
+        scores: { style: 1, practical: 1, elegant: 1 }
       },
       {
         text: "少し変わったものを選びたい",
-        scores: { unique: 3, mechanical: 1, style: 1, experimental: 1 }
+        scores: { unique: 2, mechanical: 1, style: 1 }
       },
       {
         text: "普通すぎると物足りない",
-        scores: { unique: 3, style: 2, experimental: 3 }
+        scores: { unique: 3, style: 2, experimental: 3, professional: -1 }
       },
     ],
   },
@@ -146,7 +150,7 @@ const questions = [
         scores: { practical: 3, professional: 2 }
       },
       {
-        text: "荒っぽいが頼れる",
+        text: "荒っぽく、力強い",
         scores: { rugged: 3, practical: 1 }
       },
       {
@@ -161,19 +165,19 @@ const questions = [
     answers: [
       {
         text: "金属の重厚感や機械らしさ",
-        scores: { classic: 2, mechanical: 3, elegant: 1 }
+        scores: { classic: 2, mechanical: 3, rugged: 1 }
+      },
+      {
+        text: "磨かれた金属の端正な感じ",
+        scores: { elegant: 3, style: 2, classic: 1 }
       },
       {
         text: "樹脂や新素材の機能的な感じ",
         scores: { modern: 3, practical: 2, professional: 1 }
       },
       {
-        text: "変わった形や異質な組み合わせ",
-        scores: { unique: 3, experimental: 3, style: 2 }
-      },
-      {
-        text: "素材より、全体の似合い方が大事",
-        scores: { style: 1, practical: 1, elegant: 1 }
+        text: "変わった構造や異質な組み合わせ",
+        scores: { unique: 3, experimental: 3, mechanical: 1 }
       },
     ],
   },
@@ -183,7 +187,7 @@ const questions = [
     answers: [
       {
         text: "かなりある。手入れや構造も好き",
-        scores: { mechanical: 3, classic: 2, style: 1 }
+        scores: { mechanical: 3, classic: 1, style: 1 }
       },
       {
         text: "気に入ったものなら長く使う",
@@ -205,15 +209,15 @@ const questions = [
     answers: [
       {
         text: "未来的で、見たことのない設計",
-        scores: { modern: 3, unique: 2, experimental: 3, mechanical: 1 }
+        scores: { modern: 3, unique: 2, experimental: 3, mechanical: 1, classic: -1 }
       },
       {
         text: "古くて、今ではまず見ない奇妙な道具",
-        scores: { classic: 3, unique: 2, experimental: 3, mechanical: 2 }
+        scores: { classic: 3, unique: 2, experimental: 3, mechanical: 2, modern: -1 }
       },
       {
         text: "珍しいこと自体には興味がない",
-        scores: { practical: 3, professional: 2, experimental: 0 }
+        scores: { practical: 3, professional: 2, unique: -1, experimental: -2 }
       },
     ],
   },
@@ -222,16 +226,20 @@ const questions = [
     subtitle: "キャラクターデザインとして持たせたい印象です。",
     answers: [
       {
-        text: "小さめで控えめ",
-        scores: { compact: 3, practical: 2 }
+        text: "小型で控えめ",
+        scores: { compact: 3, practical: 1, elegant: 1 }
       },
       {
-        text: "一般的な拳銃らしいバランス",
+        text: "標準的なフルサイズ",
         scores: { practical: 2, professional: 2 }
       },
       {
-        text: "大きくても、形に個性がある方がいい",
-        scores: { style: 2, unique: 2, rugged: 1, experimental: 2 }
+        text: "大型で、堂々とした存在感",
+        scores: { style: 2, rugged: 2, mechanical: 1 }
+      },
+      {
+        text: "普通の拳銃とは違うシルエット",
+        scores: { unique: 3, experimental: 2, style: 1 }
       },
     ],
   },
@@ -241,23 +249,27 @@ const questions = [
     answers: [
       {
         text: "美しい",
-        scores: { elegant: 3, style: 3 }
+        scores: { elegant: 3, style: 3, rugged: -1 }
       },
       {
         text: "信頼できる",
-        scores: { practical: 3, professional: 3 }
+        scores: { practical: 3, professional: 3, unique: -1, experimental: -2 }
+      },
+      {
+        text: "無骨で頼れる",
+        scores: { rugged: 3, practical: 1, elegant: -1 }
       },
       {
         text: "古くても格好いい",
-        scores: { classic: 3, mechanical: 2 }
+        scores: { classic: 3, mechanical: 2, modern: -1 }
       },
       {
         text: "普通じゃない",
-        scores: { unique: 3, experimental: 3, style: 1 }
+        scores: { unique: 3, experimental: 3, style: 1, practical: -1, professional: -1 }
       },
       {
         text: "静かで目立たない",
-        scores: { compact: 3, practical: 2 }
+        scores: { compact: 3, elegant: 1, style: -1, rugged: -1 }
       },
     ],
   },
@@ -273,9 +285,9 @@ const guns = [
     imageLicense: "Public Domain",
     imageNote: "",
     traits: {
-      style: 5, practical: 2.2, classic: 5, modern: 1, elegant: 5,
-      rugged: 3, unique: 3.5, professional: 1.5, mechanical: 4, compact: 1,
-      experimental: 1
+      style: 5, practical: 2, classic: 5, modern: 1, elegant: 5,
+      rugged: 2.5, unique: 3, professional: 1, mechanical: 4, compact: 1,
+      experimental: 0.5,
     },
     tags: ["クラシック", "高級感", "存在感"],
     copy: "古典的な美しさと強い存在感を持つ人物に似合う一丁。",
@@ -291,9 +303,9 @@ const guns = [
     imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
     imageNote: "",
     traits: {
-      style: 5, practical: 3, classic: 3.5, modern: 3, elegant: 5,
-      rugged: 1, unique: 3, professional: 3, mechanical: 4, compact: 1.5,
-      experimental: 1
+      style: 5, practical: 3.5, classic: 3, modern: 3, elegant: 5,
+      rugged: 1, unique: 2.5, professional: 3.5, mechanical: 4, compact: 1,
+      experimental: 0.5,
     },
     tags: ["華やか", "洗練", "存在感"],
     copy: "実用性を保ちながら、隠しきれない華やかさがある人物向け。",
@@ -310,8 +322,8 @@ const guns = [
     imageNote: "",
     traits: {
       style: 1, practical: 5, classic: 1, modern: 5, elegant: 1,
-      rugged: 3, unique: 1, professional: 5, mechanical: 1, compact: 2.5,
-      experimental: 0.5
+      rugged: 3, unique: 0.5, professional: 5, mechanical: 1, compact: 2.5,
+      experimental: 0,
     },
     tags: ["合理的", "現代的", "実務派"],
     copy: "道具は道具、と割り切れる合理主義者に似合います。",
@@ -328,8 +340,8 @@ const guns = [
     imageNote: "",
     traits: {
       style: 2, practical: 5, classic: 2, modern: 4, elegant: 1,
-      rugged: 5, unique: 2, professional: 5, mechanical: 3, compact: 1.5,
-      experimental: 1
+      rugged: 5, unique: 1.5, professional: 5, mechanical: 3, compact: 1,
+      experimental: 0.5,
     },
     tags: ["無骨", "堅実", "プロフェッショナル"],
     copy: "無駄に飾らず、仕事道具としての説得力を重視する人物向け。",
@@ -346,11 +358,11 @@ const guns = [
     imageNote: "",
     traits: {
       style: 3, practical: 5, classic: 3, modern: 3.5, elegant: 4,
-      rugged: 3, unique: 2, professional: 5, mechanical: 3, compact: 1.5,
-      experimental: 1
+      rugged: 3, unique: 1.5, professional: 5, mechanical: 3, compact: 1,
+      experimental: 0.5,
     },
-    tags: ["上質", "堅実", "正統派"],
-    copy: "真面目で隙がなく、それでいて品のある人物に似合います。",
+    tags: ["正統派", "堅実", "プロ仕様"],
+    copy: "実績ある正統派の道具を、きちんと選ぶ人物に似合います。",
     detail: "実務的な説得力が強い一方で、無骨一辺倒ではないタイプです。職人気質、高い訓練度、落ち着いた自信を持つキャラクターに合わせやすいでしょう。",
   },
   {
@@ -364,9 +376,9 @@ const guns = [
     traits: {
       style: 4, practical: 4, classic: 1, modern: 5, elegant: 4,
       rugged: 2, unique: 3, professional: 4, mechanical: 2.5, compact: 2.5,
-      experimental: 2
+      experimental: 1.5,
     },
-    tags: ["スマート", "現代的", "ひと癖"],
+    tags: ["スマート", "現代的", "独自設計"],
     copy: "端正なのに少し変わっている、知的な人物に似合うタイプ。",
     detail: "現代的で滑らかな雰囲気を持ちつつ、定番一辺倒ではない個性があります。合理的なのに趣味性もあり、知的で少し癖のあるキャラクターに向いています。",
   },
@@ -380,11 +392,11 @@ const guns = [
     imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/2.5/",
     imageNote: "",
     traits: {
-      style: 4, practical: 4, classic: 4, modern: 2, elegant: 4,
-      rugged: 2, unique: 2.5, professional: 3, mechanical: 4.5, compact: 2,
-      experimental: 1.5
+      style: 4, practical: 4.5, classic: 4, modern: 2, elegant: 3.5,
+      rugged: 2, unique: 2.5, professional: 3, mechanical: 5, compact: 2,
+      experimental: 1,
     },
-    tags: ["通好み", "機械美", "控えめ"],
+    tags: ["機械美", "実用派", "通好み"],
     copy: "目立つためではなく、自分の趣味で良いものを選ぶ人物向け。",
     detail: "古典的な美しさと機械的な魅力がありながら、過剰な自己主張はしません。道具に詳しい人物、静かなこだわりを持つ人物に似合います。",
   },
@@ -398,9 +410,9 @@ const guns = [
     imageLicenseUrl: "https://creativecommons.org/publicdomain/zero/1.0/",
     imageNote: "",
     traits: {
-      style: 5, practical: 3.2, classic: 5, modern: 1, elegant: 4,
-      rugged: 4, unique: 3, professional: 3, mechanical: 5, compact: 1.5,
-      experimental: 1
+      style: 4.5, practical: 3.5, classic: 5, modern: 1, elegant: 3.5,
+      rugged: 5, unique: 2.5, professional: 3.5, mechanical: 5, compact: 1,
+      experimental: 0.5,
     },
     tags: ["古典", "様式美", "強いこだわり"],
     copy: "古いものを古いからこそ愛せる、信念の強い人物に似合います。",
@@ -415,11 +427,11 @@ const guns = [
     imageLicense: "Public Domain",
     imageNote: "",
     traits: {
-      style: 4, practical: 3.5, classic: 5, modern: 1.5, elegant: 5,
-      rugged: 2, unique: 3, professional: 3, mechanical: 4, compact: 2,
-      experimental: 1
+      style: 4, practical: 4, classic: 5, modern: 1.5, elegant: 5,
+      rugged: 2, unique: 1.5, professional: 4, mechanical: 3.5, compact: 2,
+      experimental: 0.5,
     },
-    tags: ["古典的", "優雅", "抑制"],
+    tags: ["古典", "端正", "実績"],
     copy: "クラシックが好きでも、過剰な主張は好まない人物に。",
     detail: "古典的な輪郭と端正さがあり、落ち着いた印象です。伝統を好みながらも、大げさな演出を必要としないキャラクターに合わせやすいでしょう。",
   },
@@ -433,9 +445,9 @@ const guns = [
     imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
     imageNote: "",
     traits: {
-      style: 4.5, practical: 3, classic: 5, modern: 1, elegant: 5,
-      rugged: 1, unique: 2.5, professional: 2.5, mechanical: 3, compact: 5,
-      experimental: 1
+      style: 4, practical: 3, classic: 5, modern: 1, elegant: 5,
+      rugged: 1, unique: 2, professional: 2.5, mechanical: 3, compact: 5,
+      experimental: 0.5,
     },
     tags: ["小型", "クラシック", "洗練"],
     copy: "目立ちすぎず、古典的な洗練を持つ人物に似合います。",
@@ -452,9 +464,9 @@ const guns = [
     imageLicenseUrl: "https://unsplash.com/license",
     imageNote: "",
     traits: {
-      style: 5, practical: 1, classic: 2, modern: 2.5, elegant: 1,
-      rugged: 5, unique: 5, professional: 1, mechanical: 5, compact: 0,
-      experimental: 3
+      style: 5, practical: 0.5, classic: 2, modern: 2.5, elegant: 1,
+      rugged: 5, unique: 5, professional: 0.5, mechanical: 5, compact: 0,
+      experimental: 2.5,
     },
     tags: ["強烈", "派手", "ロマン"],
     copy: "合理性よりも存在感。持つだけで画面の印象を大きく変える人物向け。",
@@ -469,11 +481,11 @@ const guns = [
     imageLicense: "Public Domain",
     imageNote: "",
     traits: {
-      style: 3, practical: 4, classic: 1, modern: 5, elegant: 2,
-      rugged: 2, unique: 4.5, professional: 4, mechanical: 2.5, compact: 2,
-      experimental: 2
+      style: 3, practical: 4, classic: 0.5, modern: 5, elegant: 2,
+      rugged: 2, unique: 4, professional: 4, mechanical: 2.5, compact: 2,
+      experimental: 2,
     },
-    tags: ["現代的", "特殊", "理屈派"],
+    tags: ["現代的", "軽量", "特殊"],
     copy: "普通ではない理由を、きちんと説明できる人物に似合います。",
     detail: "現代的で独特な立ち位置を持つため、単なる奇抜さよりも『選ぶ理由がある』キャラクターに向きます。専門知識のある人物や合理的な変わり者と好相性です。",
   },
@@ -487,8 +499,8 @@ const guns = [
     imageNote: "※ P85の同系列であるRuger P89の参考画像",
     traits: {
       style: 1, practical: 5, classic: 3, modern: 2, elegant: 1,
-      rugged: 5, unique: 1.5, professional: 3.5, mechanical: 3, compact: 1.5,
-      experimental: 1
+      rugged: 5, unique: 1, professional: 3.5, mechanical: 3, compact: 1.5,
+      experimental: 0.5,
     },
     tags: ["地味", "頑丈", "実用品"],
     copy: "華やかさより、頑丈さと実直さを好む人物向け。",
@@ -505,13 +517,13 @@ const guns = [
     imageNote: "※ ブレース、光学照準器、ライト装着個体。Commons上の現行版はHohumによる色調調整あり",
     rare: "modern_oddity",
     traits: {
-      style: 4, practical: 2.5, classic: 0, modern: 5, elegant: 1,
-      rugged: 3, unique: 5, professional: 2, mechanical: 5, compact: 0,
-      experimental: 5
+      style: 4, practical: 1, classic: 0, modern: 5, elegant: 0.5,
+      rugged: 2.5, unique: 5, professional: 0.5, mechanical: 5, compact: 0,
+      experimental: 5,
     },
     tags: ["異色", "未来的", "変則設計"],
-    copy: "普通の拳銃という枠にこだわらない、現代的な変わり者に。",
-    detail: "新しい機構や変則的な設計そのものに魅力を感じるキャラクター向けです。単に目立ちたいのではなく、『なぜこんな構造なのか』まで面白がれる人物に似合います。",
+    copy: "普通の拳銃では物足りない、変則設計そのものを楽しめる人物に。",
+    detail: "P90系の50発マガジンを横向きに使う独特な構成など、普通の拳銃とは明確に違う設計が特徴です。実用性だけで無難な定番を選ぶ人物より、新しい機構や変則的な構造そのものを面白がれるキャラクターに似合います。",
   },
   {
     name: "Apache Revolver",
@@ -524,12 +536,12 @@ const guns = [
     imageNote: "",
     rare: "antique_oddity",
     traits: {
-      style: 4, practical: 0.5, classic: 5, modern: 0, elegant: 1,
-      rugged: 4, unique: 5, professional: 0.5, mechanical: 5, compact: 3,
-      experimental: 5
+      style: 4, practical: 0, classic: 5, modern: 0, elegant: 0.5,
+      rugged: 3.5, unique: 5, professional: 0, mechanical: 5, compact: 3,
+      experimental: 5,
     },
     tags: ["珍品", "古典", "異様な機構"],
-    copy: "古い珍品や奇妙な複合道具そのものに惹かれる人物向け。",
+    copy: "古い珍品と奇妙な機構を、実用性より面白さで選ぶ人物向け。",
     detail: "通常の拳銃らしさより、歴史的な珍しさや奇妙な構造に価値を感じるキャラクターに似合います。骨董品、収集癖、危うい趣味性を持つ人物なら特に自然です。",
   },
 ];
@@ -697,7 +709,7 @@ function getProfile() {
 
   TRAITS.forEach((trait) => {
     const max = TRAIT_MAXIMA[trait] || 1;
-    profile[trait] = Math.min(5, (totals[trait] / max) * 5);
+    profile[trait] = Math.max(0, Math.min(5, (totals[trait] / max) * 5));
   });
 
   return profile;
@@ -709,12 +721,12 @@ const TRAIT_WEIGHTS = {
   classic: 1,
   modern: 1,
   elegant: 0.9,
-  rugged: 0.9,
-  unique: 1.1,
-  professional: 0.9,
+  rugged: 1,
+  unique: 1.05,
+  professional: 0.95,
   mechanical: 1,
-  compact: 0.85,
-  experimental: 1.15,
+  compact: 0.9,
+  experimental: 1.05,
 };
 
 function similarity(profile, gunTraits) {
@@ -739,20 +751,25 @@ function similarity(profile, gunTraits) {
 function rareResultEligible(gun, profile) {
   if (!gun.rare) return true;
 
+  // P50は「未来的な珍品」、Apacheは「古い珍品」を明確に選んだ時だけ候補にする。
   if (gun.rare === "modern_oddity") {
     return (
-      profile.experimental >= 3.3 &&
-      profile.modern >= 3.0 &&
-      profile.unique >= 3.0
+      selectedAnswers[9] === 0 &&
+      selectedAnswers[11] === 4 &&
+      profile.experimental >= 3.2 &&
+      profile.unique >= 3.0 &&
+      profile.modern >= 1.8
     );
   }
 
   if (gun.rare === "antique_oddity") {
     return (
-      profile.experimental >= 3.3 &&
-      profile.classic >= 3.0 &&
+      selectedAnswers[9] === 1 &&
+      selectedAnswers[11] === 4 &&
+      profile.experimental >= 3.2 &&
       profile.unique >= 3.0 &&
-      profile.mechanical >= 2.5
+      profile.classic >= 2.0 &&
+      profile.mechanical >= 2.0
     );
   }
 

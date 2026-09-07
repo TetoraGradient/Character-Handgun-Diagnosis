@@ -76,6 +76,10 @@
 
 Kel-Tec P50 と Apache Revolver は、通常の結果よりも条件を厳しくした特殊寄りの結果です。
 
+Kel-Tec P50 は「未来的な珍品」と「普通じゃない」を選び、UNIQUE・EXPERIMENTAL・MODERNが高い場合に候補になります。
+
+Apache Revolver は「古くて奇妙な珍品」と「普通じゃない」を選び、UNIQUE・EXPERIMENTAL・CLASSIC・MECHANICALが高い場合に候補になります。
+
 ## 質問や結果を編集する
 
 質問は `script.js` 内の `questions` を編集します。
@@ -86,16 +90,18 @@ Kel-Tec P50 と Apache Revolver は、通常の結果よりも条件を厳しく
 
 ```js
 {
-  name: "Beretta 92FS",
-  jaName: "ベレッタ 92FS",
+  name: "Kel-Tec P50",
+  jaName: "ケルテック P50",
   traits: {
     style: 4,
-    practical: 3.5,
-    classic: 4,
-    modern: 2.5
+    practical: 1,
+    modern: 5,
+    unique: 5,
+    mechanical: 5,
+    experimental: 5
   },
-  tags: ["端正", "クラシック", "メカニカル"],
-  copy: "実用品にも美しさを求める人物に似合う一丁。",
+  tags: ["異色", "未来的", "変則設計"],
+  copy: "普通の拳銃では物足りない、変則設計そのものを楽しめる人物に。",
   detail: "結果画面に表示する説明文"
 }
 ```
