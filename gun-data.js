@@ -74,9 +74,9 @@ const guns = [
   {
     name: "SIG Sauer P226",
     jaName: "SIG ザウエル P226",
-    image: "https://upload.wikimedia.org/wikipedia/commons/3/36/Sig_Sauer_P226.jpg",
-    imageSource: "https://commons.wikimedia.org/wiki/File:Sig_Sauer_P226.jpg",
-    imageCredit: "Bruce Varner (Btvarner)",
+    image: "https://upload.wikimedia.org/wikipedia/commons/4/41/SIGSauerP226.JPG",
+    imageSource: "https://commons.wikimedia.org/wiki/File:SIGSauerP226.JPG",
+    imageCredit: "BankingBum",
     imageLicense: "CC BY-SA 3.0",
     imageLicenseUrl: "https://creativecommons.org/licenses/by-sa/3.0/",
     imageNote: "",
