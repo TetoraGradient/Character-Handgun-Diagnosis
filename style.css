@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=WDXL+Lubrifont+JP+N:wght@400&display=swap');
-
 :root {
   --bg: #0d0f12;
   --panel: #15181d;
@@ -10,8 +8,8 @@
   --accent: #d7ff48;
   --danger: #ff7474;
   --max: 860px;
-  --jp: "DotGothic16", sans-serif;
-  --en: "WDXL Lubrifont JP N", sans-serif;
+  --jp: "DotGothic16", "Noto Sans JP", "Yu Gothic UI", "Meiryo", sans-serif;
+  --en: "WDXL Lubrifont JP N", "Courier New", monospace;
 }
 
 * {
@@ -1289,4 +1287,20 @@ p {
   .gun-result-card-image-frame {
     height: 220px;
   }
+}
+
+
+/* GitHub Pages stability */
+a.primary-button,
+a.secondary-button {
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
