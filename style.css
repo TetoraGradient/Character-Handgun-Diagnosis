@@ -1065,3 +1065,37 @@ p {
     font-size: 0.84rem;
   }
 }
+
+
+/* Start button centered */
+#start-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Start screen hero centered */
+#start-screen {
+  text-align: center;
+}
+
+#start-screen .eyebrow,
+#start-screen .start-copy,
+#start-screen .start-copy-tail,
+#start-screen .name-field-hero,
+#start-screen .name-field-hero input {
+  text-align: center;
+}
+
+#start-screen .name-field-hero {
+  width: min(100%, 680px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#start-screen .note {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
