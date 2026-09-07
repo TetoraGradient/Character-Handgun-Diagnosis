@@ -80,33 +80,6 @@ Kel-Tec P50 は「未来的な珍品」と「普通じゃない」を選び、UN
 
 Apache Revolver は「古くて奇妙な珍品」と「普通じゃない」を選び、UNIQUE・EXPERIMENTAL・CLASSIC・MECHANICALが高い場合に候補になります。
 
-## 質問や結果を編集する
-
-質問は `script.js` 内の `questions` を編集します。
-
-結果候補は `script.js` 内の `guns` を編集します。
-
-各拳銃には、以下のような情報を設定できます。
-
-```js
-{
-  name: "Kel-Tec P50",
-  jaName: "ケルテック P50",
-  traits: {
-    style: 4,
-    practical: 1,
-    modern: 5,
-    unique: 5,
-    mechanical: 5,
-    experimental: 5
-  },
-  tags: ["異色", "未来的", "変則設計"],
-  copy: "普通の拳銃では物足りない、変則設計そのものを楽しめる人物に。",
-  detail: "結果画面に表示する説明文"
-}
-```
-
-`traits` の値を調整すると、その拳銃がどの回答傾向で出やすくなるかを変更できます。
 
 ## フォント
 
