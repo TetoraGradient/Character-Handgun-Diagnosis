@@ -1099,3 +1099,194 @@ p {
   margin-right: auto;
   text-align: center;
 }
+
+
+/* Start screen: result-list link */
+.start-result-list-link {
+  display: block;
+  width: fit-content;
+  margin: 14px auto 0;
+  text-decoration: none;
+  line-height: 52px;
+}
+
+/* Result list page */
+.results-list-page {
+  min-height: 100svh;
+}
+
+.results-list-shell {
+  width: min(calc(100% - 40px), 1120px);
+  margin: 0 auto;
+  padding: 54px 0 80px;
+}
+
+.results-list-header {
+  max-width: 760px;
+  margin-bottom: 52px;
+}
+
+.results-list-title {
+  margin: 0 0 16px;
+  font-family: "DotGothic16", sans-serif;
+  font-size: clamp(2rem, 5vw, 4rem);
+  line-height: 1.2;
+  letter-spacing: 0.06em;
+}
+
+.results-list-lead {
+  margin: 0 0 26px;
+  color: var(--muted);
+  line-height: 1.9;
+}
+
+.results-back-link {
+  display: inline-block;
+  text-decoration: none;
+  line-height: 52px;
+}
+
+.gun-result-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 26px;
+}
+
+.gun-result-card {
+  position: relative;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  background: var(--panel);
+}
+
+.gun-result-card-index {
+  margin-bottom: 18px;
+  color: var(--accent);
+  font-family: "WDXL Lubrifont JP N", sans-serif;
+  font-size: 0.82rem;
+  letter-spacing: 0.12em;
+}
+
+.gun-result-card-heading {
+  min-height: 84px;
+  margin-bottom: 20px;
+}
+
+.gun-result-card-name {
+  margin: 0 0 6px;
+  font-family: "WDXL Lubrifont JP N", sans-serif;
+  font-size: clamp(1.8rem, 3.2vw, 2.8rem);
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+}
+
+.gun-result-card-name-ja {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.6;
+  letter-spacing: 0.07em;
+}
+
+.gun-result-card-figure {
+  width: 100%;
+  margin: 0 0 20px;
+}
+
+.gun-result-card-image-frame {
+  width: 100%;
+  height: 250px;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: #f4f4f0;
+}
+
+.gun-result-card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.gun-result-card-credit {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 0.62rem;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+}
+
+.gun-result-card-credit a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.gun-result-card-credit a:hover {
+  color: var(--accent);
+}
+
+.result-card-image-note {
+  color: var(--text);
+}
+
+.gun-result-card-tags {
+  margin: 0 0 18px;
+  gap: 8px;
+}
+
+.gun-result-card-tags .tag {
+  padding: 7px 10px;
+  font-size: 0.8rem;
+}
+
+.gun-result-card-copy {
+  margin: 0 0 10px;
+  font-size: 1.02rem;
+  line-height: 1.8;
+}
+
+.gun-result-card-detail {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.86rem;
+  line-height: 1.9;
+}
+
+.gun-result-card.image-load-error .gun-result-card-image-frame {
+  background: var(--panel-2);
+}
+
+@media (max-width: 760px) {
+  .results-list-shell {
+    width: min(calc(100% - 28px), 1120px);
+    padding: 34px 0 60px;
+  }
+
+  .results-list-header {
+    margin-bottom: 36px;
+  }
+
+  .gun-result-list {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .gun-result-card {
+    padding: 18px;
+  }
+
+  .gun-result-card-heading {
+    min-height: 0;
+  }
+
+  .gun-result-card-image-frame {
+    height: 220px;
+  }
+}

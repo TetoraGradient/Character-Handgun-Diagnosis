@@ -21,7 +21,10 @@
 キャラクター拳銃診断/
 ├── index.html
 ├── style.css
+├── gun-data.js
 ├── script.js
+├── results.html
+├── results.js
 └── README.md
 ```
 
@@ -32,7 +35,16 @@
   レイアウト、フォント、色、ボタン、結果画面などの見た目を定義しています。
 
 - `script.js`  
-  質問内容、拳銃データ、診断ロジック、結果表示を管理しています。
+  質問内容、診断ロジック、結果表示を管理しています。
+
+- `gun-data.js`  
+  診断画面と結果一覧で共通使用する拳銃データです。
+
+- `results.html`  
+  全結果を一覧表示するページです。
+
+- `results.js`  
+  `gun-data.js` の内容から結果一覧を生成します。
 
 ## 診断の仕組み
 
@@ -80,6 +92,33 @@ Kel-Tec P50 は「未来的な珍品」と「普通じゃない」を選び、UN
 
 Apache Revolver は「古くて奇妙な珍品」と「普通じゃない」を選び、UNIQUE・EXPERIMENTAL・CLASSIC・MECHANICALが高い場合に候補になります。
 
+## 質問や結果を編集する
+
+質問は `script.js` 内の `questions` を編集します。
+
+結果候補は `gun-data.js` 内の `guns` を編集します。診断画面と結果一覧の両方へ反映されます。
+
+各拳銃には、以下のような情報を設定できます。
+
+```js
+{
+  name: "Kel-Tec P50",
+  jaName: "ケルテック P50",
+  traits: {
+    style: 4,
+    practical: 1,
+    modern: 5,
+    unique: 5,
+    mechanical: 5,
+    experimental: 5
+  },
+  tags: ["異色", "未来的", "変則設計"],
+  copy: "普通の拳銃では物足りない、変則設計そのものを楽しめる人物に。",
+  detail: "結果画面に表示する説明文"
+}
+```
+
+`traits` の値を調整すると、その拳銃がどの回答傾向で出やすくなるかを変更できます。
 
 ## フォント
 
