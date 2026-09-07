@@ -3,7 +3,7 @@ const guns = [
   {
     name: "Colt Python",
     jaName: "コルト・パイソン",
-    image: "https://upload.wikimedia.org/wikipedia/commons/0/06/ColtPython.jpg",
+    image: "https://upload.wikimedia.org/wikipedia/commons/9/97/ColtPython.jpg",
     imageSource: "https://commons.wikimedia.org/wiki/File:ColtPython.jpg",
     imageCredit: "Sf46",
     imageLicense: "Public Domain",
